@@ -142,8 +142,9 @@ def activity_log_detail(request, id):
     
 @api_view(['GET'])
 def activity_log_detail_by_dog(request, dog_id):
-    activity_log = get_object_or_404(ActivityLog, dog=dog_id)
-    serializer = ActivityLogSerializer(activity_log)
+    # activity_logs = get_object_or_404(ActivityLog, dog=dog_id)
+    activity_logs = ActivityLog.objects.filter(dog=dog_id)
+    serializer = ActivityLogSerializer(activity_logs, many=True)
     return Response(serializer.data)
     
 
