@@ -127,13 +127,11 @@ def activity_log_list(request):
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
-@api_view(['GET', 'PUT', 'DELETE'])
+@api_view(['PUT', 'DELETE'])
 def activity_log_detail(request, id):
-    activity_log = get_object_or_404(ActivityLog, id=id)
-    if request.method == 'GET':
-        serializer = ActivityLogSerializer(activity_log)
-        return Response(serializer.data)
-    elif request.method == 'PUT':
+    activity_log = get_object_or_404(ActivityLog, id)
+
+    if request.method == 'PUT':
         serializer = ActivityLogSerializer(activity_log, data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
@@ -141,7 +139,13 @@ def activity_log_detail(request, id):
     elif request.method == 'DELETE':
         activity_log.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
-
+    
+@api_view(['GET'])
+def activity_log_detail_by_dog(request, dog_id):
+    activity_log = get_object_or_404(ActivityLog, dog=dog_id)
+    serializer = ActivityLogSerializer(activity_log)
+    return Response(serializer.data)
+    
 
 # @api_view(['POST'])
 # def create_activity_log(request):
