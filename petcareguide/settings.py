@@ -101,8 +101,10 @@ DATABASES = {
         'USER': 'postgres',
         # 'PASSWORD': os.getenv('DATABASE_PASSWORD'),
         # 'HOST': os.getenv('DATABASE_URL'),
-        'PASSWORD': 'SaveMe36!',
-        'HOST': 'localhost',
+        # 'PASSWORD': 'SaveMe36!',
+        # 'HOST': 'localhost',
+        'PASSWORD': 'nifsym-beBqyp-9cunbu',
+        'HOST': 'petcareguide.cxeua8y0cd9f.us-east-2.rds.amazonaws.com',
         'PORT': '5432'
     }
 }
