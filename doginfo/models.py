@@ -1,3 +1,4 @@
+from datetime import timezone
 from django.db import models
 
 class Dog(models.Model):
@@ -22,7 +23,8 @@ class FeedingSchedule(models.Model):
 
 class ActivityLog(models.Model):
     dog = models.ForeignKey(Dog, on_delete=models.CASCADE)
-    date = models.DateTimeField(auto_now_add=True)
+    # date = models.DateTimeField(auto_now_add=True)
+    date = models.DateTimeField(default=timezone.now)
     activity = models.CharField(max_length=100, null=True)
     notes = models.TextField(null=True)
 
