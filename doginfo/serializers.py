@@ -27,7 +27,7 @@ class feedingScheduleSerializer(serializers.ModelSerializer):
 class ActivityLogSerializer(serializers.ModelSerializer):
     class Meta:
         model = ActivityLog
-        fields = ['id', 'dog', 'activity', 'notes']
+        fields = ['id', 'dog', 'date', 'activity', 'notes']
     # id = serializers.IntegerField(read_only=True)
     # dog = serializers.IntegerField(write_only=True)
     # dog = DogSerializer()
