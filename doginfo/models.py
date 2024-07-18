@@ -22,7 +22,7 @@ class FeedingSchedule(models.Model):
 
 class ActivityLog(models.Model):
     dog = models.ForeignKey(Dog, on_delete=models.CASCADE)
-    date = models.DateTimeField(auto_now_add=True, null=True)
+    date = models.DateTimeField(auto_now_add=True)
     activity = models.CharField(max_length=100, null=True)
     notes = models.TextField(null=True)
 

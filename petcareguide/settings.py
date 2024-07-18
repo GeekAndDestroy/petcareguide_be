@@ -35,7 +35,7 @@ SECRET_KEY =  'django-insecure-$ktkb)2t9b)3ntt(p3k%y)tv#ft9h8vyrnu$(#-fsy3)=ao3g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['3.16.138.57']
+ALLOWED_HOSTS = ['3.16.138.57', 'localhost']
 
 
 # Application definition
@@ -99,18 +99,28 @@ WSGI_APPLICATION = "petcareguide.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'petcareguide',
+#         'USER': 'admin',
+#         # 'PASSWORD': os.getenv('DATABASE_PASSWORD'),
+#         # 'HOST': os.getenv('DATABASE_URL'),
+#         # 'PASSWORD': 'SaveMe36!',
+#         # 'HOST': 'localhost',
+#         'PASSWORD': 'nifsym-beBqyp-9cunbu',
+#         'HOST': 'database-1.c5o4y6qe66md.us-east-2.rds.amazonaws.com',
+#         'PORT': '3306'
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'petcareguide',
-        'USER': 'admin',
-        # 'PASSWORD': os.getenv('DATABASE_PASSWORD'),
-        # 'HOST': os.getenv('DATABASE_URL'),
-        # 'PASSWORD': 'SaveMe36!',
-        # 'HOST': 'localhost',
-        'PASSWORD': 'nifsym-beBqyp-9cunbu',
-        'HOST': 'database-1.c5o4y6qe66md.us-east-2.rds.amazonaws.com',
-        'PORT': '3306'
+        'USER': 'postgres',
+        'PASSWORD': 'SaveMe36!',
+        'HOST': 'localhost',
+        'PORT': '5432'
     }
 }
 
