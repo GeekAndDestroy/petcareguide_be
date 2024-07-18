@@ -6,7 +6,7 @@ from rest_framework.decorators import api_view
 # from django.http import HttpResponse
 from .models import Dog, FeedingSchedule, ActivityLog
 from .serializers import DogSerializer, feedingScheduleSerializer, ActivityLogSerializer
-# terst
+
 @api_view(['GET', 'POST'])
 def dogs_list(request):
     if request.method == 'GET':

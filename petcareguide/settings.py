@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'rest_framework',
     "debug_toolbar",
     "corsheaders",
+    "gunicorn",
     # "petcareguide",
 ]
 
@@ -96,16 +97,16 @@ WSGI_APPLICATION = "petcareguide.wsgi.application"
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'petcareguide',
-        'USER': 'postgres',
+        'USER': 'admin',
         # 'PASSWORD': os.getenv('DATABASE_PASSWORD'),
         # 'HOST': os.getenv('DATABASE_URL'),
         # 'PASSWORD': 'SaveMe36!',
         # 'HOST': 'localhost',
         'PASSWORD': 'nifsym-beBqyp-9cunbu',
-        'HOST': 'petcareguide.cxeua8y0cd9f.us-east-2.rds.amazonaws.com',
-        'PORT': '5432'
+        'HOST': 'database-1.c5o4y6qe66md.us-east-2.rds.amazonaws.com',
+        'PORT': '3306'
     }
 }
 
